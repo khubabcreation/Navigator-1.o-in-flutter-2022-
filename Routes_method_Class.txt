@@ -1,0 +1,38 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:navi_prac/RoutesName.dart';
+import 'package:navi_prac/SecondClass.dart';
+import 'package:navi_prac/ThirdClass.dart';
+import 'package:navi_prac/main.dart';
+
+class Routess {
+  static MaterialPageRoute generateMyRoute(RouteSettings settings) {
+    if (settings.name == RoutesName.homeScreenid) {
+      return MaterialPageRoute(
+        builder: (context) => MyHomePage(),
+      );
+    } else if (settings.name == RoutesName.secondScreenId) {
+      return MaterialPageRoute(
+        builder: (context) => SecondClass(data: settings.arguments as Map),
+      );
+    } else if (settings.name == RoutesName.thirdScreenid) {
+      return MaterialPageRoute(
+        builder: (context) => ThirdClass(
+          data: settings.arguments as String,
+        ),
+      );
+    } else {
+      return MaterialPageRoute(
+        builder: (context) => Scaffold(
+          appBar: AppBar(title: Text('Error Screen')),
+          body: Container(
+            height: 300,
+            width: 300,
+            color: Colors.amber,
+            child: Text('404 Error'),
+          ),
+        ),
+      );
+    }
+  }
+}

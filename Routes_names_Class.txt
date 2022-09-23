@@ -1,0 +1,5 @@
+class RoutesName {
+  static const String homeScreenid = 'home';
+  static const String secondScreenId = 'second';
+  static const String thirdScreenid = 'third';
+}

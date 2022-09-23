@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:navi_prac/RoutesName.dart';
+
+class SecondClass extends StatefulWidget {
+  dynamic data;
+  SecondClass({required this.data, Key? key}) : super(key: key);
+
+  @override
+  State<SecondClass> createState() => _SecondClassState();
+}
+
+class _SecondClassState extends State<SecondClass> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Second Class')),
+      body: Container(
+          color: Colors.amber,
+          height: 300,
+          width: 300,
+          child: Column(
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, RoutesName.thirdScreenid,
+                        arguments: 'my name is khan');
+                  },
+                  child: Icon(Icons.forward)),
+              Text(widget.data['name']),
+            ],
+          )),
+    );
+  }
+}

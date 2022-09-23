@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
+
+class ThirdClass extends StatefulWidget {
+  dynamic data;
+  ThirdClass({required this.data, Key? key}) : super(key: key);
+
+  @override
+  State<ThirdClass> createState() => _ThirdClassState();
+}
+
+class _ThirdClassState extends State<ThirdClass> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(widget.data)),
+      body: Container(
+        color: Colors.red,
+        height: 300,
+        width: 300,
+        child: Text('uper dakho lala'),
+      ),
+    );
+  }
+}
